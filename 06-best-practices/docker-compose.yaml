@@ -1,0 +1,12 @@
+version: '3.9'
+services:
+  localstack: # LocalStack container
+    image: localstack/localstack
+    ports:
+      # Map the port so you can access the API from the host machine
+      - 4566:4566
+    environment:
+      - SERVICES=s3
+      - DEBUG=0
+      - DATA_DIR=/tmp/localstack/data
+      - LOCALSTACK_AUTH_TOKEN=ls-SenAZOgI-4833-NUYE-HEVo-5917ZOrUb45a
